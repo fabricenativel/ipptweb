@@ -5,9 +5,9 @@ site_author: Sébastien HOARAU et Fabrice NATIVEL
 
 # Les éléments de la barre de navigation
 nav:
-  - Boucle principale du jeu : 'while.md'
-  - Instructions conditionnelles : "ifelse.md"  
-  - Listes : listes.md
+  - Interactions : 'interactions.md'
+  - Première version : 'jeu_complet.md'
+  - Listes : 'listes.md'
 
 #Le thème du site
 theme:

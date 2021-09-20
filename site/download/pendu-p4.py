@@ -200,12 +200,12 @@ while nb_erreur<7 and not trouve:
     if lettre!="":
         barre(lettre)
         deja_proposees+=lettre
-        if lettre not in MOT:
-            nb_erreur += 1
-            tracer_pendu(nb_erreur)
-        else:
+        if lettre in MOT:
             ecrit_lettre(MOT,lettre)
             trouve = verifie(MOT,deja_proposees)
+        else:
+            nb_erreur += 1
+            tracer_pendu(nb_erreur)
 if trouve:
     affiche_message("BRAVO ! Vous avez gagné.")
 else:

@@ -108,6 +108,7 @@ def carres(n):
         carre(x,-250)
         x+=50
 
+
 def affiche_alphabet():
     code_lettre = 65
     abscisse_lettre = -300
@@ -120,35 +121,6 @@ def affiche_alphabet():
         code_lettre += 1
         abscisse_lettre+=25
 
-
-# Suite
-
-def tracer_pendu(nb_erreur):
-    if nb_erreur == 1:
-        pendu_1()
-    elif nb_erreur == 2:
-        pendu_2()
-    elif nb_erreur == 3:
-        pendu_3()
-    elif nb_erreur == 4:
-        pendu_4()
-    elif nb_erreur == 5:
-        pendu_5()
-    elif nb_erreur == 6:
-        pendu_6()
-
-
-def get_lettre():
-    lettre=feuille.textinput("Proposer une lettre","Quelle lettre proposez-vous ?")
-    if len(lettre)==1 and lettre in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-        efface_message()
-        affiche_message("Lettre acceptée")
-        return lettre
-    else:
-        efface_message()
-        affiche_message("Il faut saisir une lettre majuscule")
-        return ""
-
 def barre(lettre):
     abscisse_lettre = -300+(ord(lettre)-65)*25
     crayon.penup()
@@ -160,59 +132,10 @@ def barre(lettre):
     crayon.forward(22)
     crayon.color("black")
 
-def ecrit_lettre(MOT,lettre):
-    x=-50*len(MOT)//2
-    for l in MOT:
-        if l==lettre:
-            crayon.penup()
-            crayon.goto(x+20,-250)
-            crayon.pendown()
-            crayon.write(lettre,font=("Arial",24,"bold"),align="center")
-        x+=50
-
-
-def verifie(MOT,propositions):
-    return all(l in propositions for l in MOT)
-
-def affiche_message(message):
-    crayon.penup()
-    crayon.goto(0,300)
-    crayon.pendown()
-    crayon.write(message, font=("Arial",24,"bold"),align="center")
-
-def efface_message():
-    crayon.penup()
-    crayon.goto(0,300)
-    crayon.pendown()
-    crayon.color("beige")
-    crayon.write(chr(0x2588)*40, font=("Arial",24,"bold"),align="center")
-    crayon.color("black")
-
 # Programme principal
 
 carres(6)
 affiche_alphabet()
-nb_erreur=0
-deja_proposees=""
-trouve=False
-while nb_erreur<7 and not trouve:
-    lettre=get_lettre()
-    if lettre!="":
-        barre(lettre)
-        deja_proposees+=lettre
-        if lettre not in MOT:
-            nb_erreur += 1
-            tracer_pendu(nb_erreur)
-        else:
-            ecrit_lettre(MOT,lettre)
-            trouve = verifie(MOT,deja_proposees)
-if trouve:
-    affiche_message("BRAVO ! Vous avez gagné.")
-else:
-    affiche_message("PERDU... le mot était "+MOT)
-
-
-
 
 # --- A laisser à la fin
 

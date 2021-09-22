@@ -91,6 +91,7 @@ while nb_erreurs<7:
 Remplacer la boucle précédente par celle-ci dans le programme du pendu, et vérifier qu'à présent la boucle se termine après 7 erreurs.
 
 ## Dessin du pendu correspondant au nombre d'erreurs
+
 Après la mise à jour de `nb_erreurs`, on voudrait modifier en conséquence le dessin du pendu. On doit donc écrire une fonction `tracer_pendu` qui prend en paramètre le nombre d'erreurs commises par le joueur et trace le dessin correspondant. Compléter la définition de cette fonction :
 
 ```python

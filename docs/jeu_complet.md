@@ -2,8 +2,8 @@
 
 ## Rappel des épisodes précédents
 
-* Programme à télécharger (version 4).
-* Rappel des notions.
+* ~~Programme à télécharger (version 4)~~ _pas pour l'instant_
+
 
 ## Fin du jeu lorsque le joueur gagne
 
@@ -11,7 +11,7 @@ Pour le moment notre boucle de jeu s'arrête lorsque le joueur a commis 7 erreur
 
 ```python
 nb_erreurs = 0
-while nb_erreurs<7:
+while nb_erreurs < 7:
     # suite de notre boucle
 ```
 
@@ -20,7 +20,7 @@ On doit aussi tester la victoire du joueur et  sortir de la boucle lorsqu'elle s
 ```python
 nb_erreurs = 0
 trouve = False
-while nb_erreurs<7 and not trouve:
+while nb_erreurs < 7 and not trouve:
     # suite de notre boucle
 ```
 
@@ -52,5 +52,23 @@ while nb_erreurs<7 and not trouve:
 ## La fonction `verifie`
 
 La mise à jour consiste à mettre la variable à `True` lorsque toutes les lettres du mot font partie des lettres déjà proposées qu'il nous faut donc mémoriser.
+
+L'algorithme est donc le suivant :
+
+- On parcourt les lettres du mot à découvrir :
+    - si la lettre testée n'est pas parmi celles déjà proposées alors la fonction s'arrête et renvoie `False`
+- Quand on sort de la boucle c'est qu'on n'a pas renvoyé `False`, on peut donc renvoyer `True`
+
+!!! exercice "A faire vous-même"
+
+    Compléter le code de la fonction `verifie` et l'intégrer à votre programme. Tester.
+
+    ```python linenums="1"
+    def verifie(..., ...):
+        for lettre in ...:
+            ... :
+                return ...
+        ...
+    ```
 
 
